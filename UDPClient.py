@@ -1,7 +1,7 @@
 from socket import *
 
-serverName = '192.168.1.41'
-serverPort = 1200
+serverName = '88.90.135.90'
+serverPort = 1201
 
 # AF_INET indicates the that we are using IPv4
 # SOCK_DGRAM means it is a UDP socket

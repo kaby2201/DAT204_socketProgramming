@@ -16,3 +16,5 @@ to the server.fa
 
 Figure highlights the main socket-related activity of the client and server that communicate over the UDP transport service
 ![The client-server application using UDP](socket_programming.PNG)
+
+Make sure you are not using well-known ports: (https://packetlife.net/media/library/23/common_ports.pdf)

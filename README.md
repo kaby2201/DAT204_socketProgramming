@@ -1,5 +1,5 @@
-# DAT204_socketProgramming
-A simple socket programming example for DAT204
+# IKT204-G Datakommunikasjon - Socket programming
+A simple socket programming example for in subject IKT204
 
 - [x] UDPClient.py
 - [x] UDPServer.py

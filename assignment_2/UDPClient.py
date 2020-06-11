@@ -1,6 +1,6 @@
 from socket import *
 
-serverName = '88.90.135.90'
+serverName = 'localhost'
 serverPort = 1201
 
 # AF_INET indicates the that we are using IPv4

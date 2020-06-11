@@ -1,5 +1,5 @@
 from socket import *
-serverName = '88.90.135.90'
+serverName = 'localhost'
 serverPort = 1200
 # AF_INET = IPv4
 # Socket_stream  = TCP

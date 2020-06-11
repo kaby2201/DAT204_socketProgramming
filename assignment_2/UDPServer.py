@@ -1,12 +1,19 @@
 from socket import *
-serverPort = 1200
 
-# AF_INET = IPv4
-# SOCK_DGRAM = UDP
-serverSocket = socket(AF_INET, SOCK_DGRAM)
-serverSocket.bind(('', serverPort))
-print("The server is ready to receive")
-while True:
-    message, clientAddress = serverSocket.recvfrom(2048)
-    modifiedMessage = message.decode().upper()
-    serverSocket.sendto(modifiedMessage.encode(), clientAddress)
+
+def main():
+    SERVER_PORT = 1200
+
+    # AF_INET is for IPv4 and SOCK_DGRAM is for UDP
+    serverSocket = socket(AF_INET, SOCK_DGRAM)
+
+    serverSocket.bind(('', SERVER_PORT))
+    print("The server is ready to receive")
+    while True:
+        message, client_address = serverSocket.recvfrom(2048)
+        modified_message = message.decode().upper()
+        serverSocket.sendto(modified_message.encode(), client_address)
+
+
+if __name__ == '__main__':
+    main()

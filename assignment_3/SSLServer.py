@@ -18,9 +18,9 @@ def main():
         connSock, addr = server_socket.accept()
         sslSocket = context.wrap_socket(connSock, server_side=True)
         sentence = sslSocket.recv(1024).decode()
-        if len(sentence) > 0:
-            print(f'Message from: {addr[0]}:{addr[1]}')
-            print(f'Message: {sentence}')
+
+        print(f'Message from: {addr[0]}:{addr[1]}')
+        print(f'Message: {sentence}')
 
         capitalizedSentence = sentence.upper()
         sslSocket.send(capitalizedSentence.encode())

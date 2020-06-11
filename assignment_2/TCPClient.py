@@ -1,23 +1,34 @@
 from socket import *
-serverName = 'localhost'
-serverPort = 1200
-# AF_INET = IPv4
-# Socket_stream  = TCP
-clientSocket = socket(AF_INET, SOCK_STREAM)
 
-# Before sending data we must establish a TCP connection
-clientSocket.connect((serverName, serverPort))
 
-# Get user input
-sentence = input('Input lowercase sentence: ')
+def main():
+    # AF_INET is IPv4 and Socket_stream  is TCP
+    clientSocket = socket(AF_INET, SOCK_STREAM)
 
-# Send sentence through the client's socket into the TCP connection
-clientSocket.send(sentence.encode())
+    # Before sending data we must establish a TCP connection
+    SERVER_NAME = 'localhost'
+    SERVER_PORT = 12000
 
-# recvfrom takes buffer size
-modifiedSentence = clientSocket.recv(1024)
+    try:
+        clientSocket.connect((SERVER_NAME, SERVER_PORT))
 
-# Print out the modified sentence
-print(modifiedSentence.decode())
-# close the socket connection
-clientSocket.close()
+        # Get user input
+        sentence = input('Input lowercase sentence: ')
+
+        # Send sentence through the client's socket into the TCP connection
+        clientSocket.send(sentence.encode())
+
+        # recvfrom takes buffer size
+        modifiedSentence = clientSocket.recv(1024)
+
+        # Print out the modified sentence
+        print(modifiedSentence.decode())
+
+        # close the socket connection
+        clientSocket.close()
+    except:
+        print('Make sure the server is open at the specified port number')
+
+
+if __name__ == '__main__':
+    main()
